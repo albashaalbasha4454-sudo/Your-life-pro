@@ -1,0 +1,156 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --paper: #f8f6f0;
+    --paper-2: #f0ede5;
+    --paper-card: #ffffff;
+    --paper-border: #e2ddd4;
+    --olive: #526653;
+    --olive-dark: #34483a;
+    --olive-light: #6b826c;
+    --copper: #b97952;
+    --copper-dark: #975f3d;
+    --copper-light: #cf916c;
+    --ink: #26352d;
+    --ink-muted: #5e6f66;
+    --ink-faint: #8d9d95;
+    color-scheme: light;
+  }
+
+  body {
+    background-color: var(--paper);
+    color: var(--ink);
+    font-family: 'IBM Plex Sans Arabic', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  h1, h2, h3, .font-serif-arabic {
+    font-family: 'Noto Serif Arabic', 'IBM Plex Sans Arabic', Georgia, serif;
+  }
+
+  /* Custom Themes */
+  html.theme-midnight, html.theme-dark {
+    --paper: #090d0b;
+    --paper-2: #121815;
+    --paper-card: #16201b;
+    --paper-border: #23312a;
+    --olive: #68856a;
+    --olive-dark: #4d6650;
+    --olive-light: #89a88c;
+    --copper: #c78862;
+    --copper-dark: #b07049;
+    --copper-light: #e09f7a;
+    --ink: #f0f4f1;
+    --ink-muted: #9eaba3;
+    --ink-faint: #62746a;
+    color-scheme: dark;
+    body {
+      background-color: var(--paper);
+      color: var(--ink);
+    }
+  }
+
+  html.theme-emerald {
+    --paper: #03211b;
+    --paper-2: #062f27;
+    --paper-card: #0a3d33;
+    --paper-border: #135245;
+    --olive: #10b981;
+    --olive-dark: #059669;
+    --olive-light: #34d399;
+    --copper: #f59e0b;
+    --ink: #ecfdf5;
+    --ink-muted: #a7f3d0;
+    --ink-faint: #6ee7b7;
+    color-scheme: dark;
+    body {
+      background-color: var(--paper);
+      color: var(--ink);
+    }
+  }
+
+  html.theme-sunset {
+    --paper: #2a150e;
+    --paper-2: #381f15;
+    --paper-card: #45261b;
+    --paper-border: #5f3627;
+    --olive: #c2410c;
+    --olive-dark: #9a3412;
+    --olive-light: #ea580c;
+    --copper: #f97316;
+    --ink: #fff7ed;
+    --ink-muted: #fed7aa;
+    --ink-faint: #fdba74;
+    color-scheme: dark;
+    body {
+      background-color: var(--paper);
+      color: var(--ink);
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
+.dark ::-webkit-scrollbar-thumb, html.theme-midnight ::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Specific styles for Yawmi Dashboard Stat Deck */
+.dashboard-stat-deck {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .dashboard-stat-deck {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .dashboard-stat-deck {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.stat-card {
+  transition: all 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+}

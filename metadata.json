@@ -1,0 +1,7 @@
+{
+  "name": "Yawmi - Daily Organizer (منظم يومي)",
+  "description": "Comprehensive Morning Notebook and Professional Workspace (يومي - منظم اليوم ومساحة العمل المهنية): Home Command Center, Daily Organizer & Rest Tracker, Client Hub & Financial Kits, Professional Growth Framework & Case Studies, and Content Studio with zero-error architecture.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
